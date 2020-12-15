@@ -22,7 +22,7 @@ kubectl get pods -l app=redis-cluster -o jsonpath='{range.items[*]}{.status.podI
 
 => 172.17.0.7:6379 172.17.0.8:6379 172.17.0.9:6379 172.17.0.10:6379 172.17.0.11:6379 172.17.0.12:6379
 
-3) Finally, we are able to run this final command. After running this command answer YES to create the cluster
+3) Finally, we are able to run this final command. After that, in the command prompt answer YES to create the cluster
 kubectl exec -it redis-cluster-0 -- redis-cli --cluster create 172.17.0.7:6379 172.17.0.8:6379 172.17.0.9:6379 172.17.0.10:6379 172.17.0.11:6379 172.17.0.12:6379 --cluster-replicas 1
 
 # Let's verify the Cluster Deployment
