@@ -51,4 +51,7 @@ I have been hit 1 times since deployment.
 kubectl delete pod redis-cluster-0
 kubectl delete pod redis-cluster-1
 
+Reference:
+https://rancher.com/blog/2019/deploying-redis-cluster
+
 The end!
