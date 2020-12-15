@@ -1,9 +1,14 @@
-Run the commands below:
+Clone this repository in your local machine:
+cd c:\temp
+git clone https://github.com/renatomatos79/redis-cluster-k8s.git
+cd redis-cluster-k8s
+
+And then, run the commands below in order to create the redis PODs and expose them using a service name redis-cluster:
 
 1) kubectl apply -f redis-sts.yaml
 2) kubectl apply -f redis-svc.yaml
 
-# Run this command to get IPs and Ports
+# Run this command to get all IPs and Ports
 kubectl get pods -l app=redis-cluster -o jsonpath='{range.items[*]}{.status.podIP}:6379'
 
 # You will see something like this:
