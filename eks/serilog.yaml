@@ -21,6 +21,6 @@ spec:
             - containerPort: 80
           env:
             - name: ACCEPT_EULA
-              value: Y
+              value: "Y"
       imagePullSecrets:
         - name: docker-inforplus-secret
