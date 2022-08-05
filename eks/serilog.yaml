@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: serilog-depl
+  labels:
+    app: serilog-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: serilog-app
+  template:
+    metadata:
+      labels:
+        app: serilog-app
+    spec:
+      containers:
+        - name: serilog-app
+          image: datalust/seq
+          ports:
+            - containerPort: 80
+          env:
+            - name: ACCEPT_EULA
+              value: Y
+      imagePullSecrets:
+        - name: docker-inforplus-secret
