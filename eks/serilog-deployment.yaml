@@ -24,19 +24,3 @@ spec:
               value: "Y"
       imagePullSecrets:
         - name: docker-inforplus-secret
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: serilog-service-nodeport
-spec:
-  type: NodePort
-  selector:
-    app: serilog-api
-  ports:
-    - protocol: TCP
-      port: 80
-      # para onde sera redirecionado o trafico
-      targetPort: 80
-      # porta para acesso ao servico
-      nodePort: 30501
